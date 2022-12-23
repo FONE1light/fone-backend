@@ -1,0 +1,14 @@
+syntax = "proto3";
+package com.fone.filmone.idl.user.v1.auth;
+
+option java_multiple_files = true;
+
+message SignUpRequest {
+  string login_id = 1;
+  string password = 2;
+}
+
+message SignUpResponse {
+  string login_id = 1;
+  bool enabled = 2;
+}
