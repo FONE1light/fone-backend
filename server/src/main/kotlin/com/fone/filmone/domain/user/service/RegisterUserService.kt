@@ -11,9 +11,11 @@ class RegisterUserService(
 ) {
 
     suspend fun registerUser(request: SignUpRequest): SignUpResponse {
-        val user = request.toEntity()
-        userRepository.save(user)
+        with(request) {
+            val user = toEntity()
+            userRepository.save(user)
 
-        return SignUpResponse(user)
+            return SignUpResponse(user)
+        }
     }
 }
