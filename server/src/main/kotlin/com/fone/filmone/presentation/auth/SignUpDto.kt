@@ -54,7 +54,6 @@ class SignUpDto {
         val agreeToTermsOfServiceTermsOfUse: Boolean,
         val agreeToPersonalInformation: Boolean,
         val isReceiveMarketing: Boolean,
-        val accessToken: String,
     ) {
 
         constructor(
@@ -72,7 +71,6 @@ class SignUpDto {
             agreeToTermsOfServiceTermsOfUse = user.agreeToTermsOfServiceTermsOfUse,
             agreeToPersonalInformation = user.agreeToPersonalInformation,
             isReceiveMarketing = user.isReceiveMarketing,
-            accessToken = "",
         )
     }
 }
