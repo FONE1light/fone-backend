@@ -1,5 +1,5 @@
 syntax = "proto3";
-import "sign_up.proto";
+import "user/v1/auth/sign_up.proto";
 package com.fone.filmone.idl.user.v1.auth;
 
 option java_multiple_files = true;

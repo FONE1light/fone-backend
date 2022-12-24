@@ -21,7 +21,7 @@ data class User(
     val nickname: String,
 
     @Column
-    val date: String,
+    val birthday: String,
 
     @Column
     val gender: String,
@@ -34,5 +34,8 @@ data class User(
 
     @Column
     val email: String,
+
+    @Column
+    val providerType: String,
 )
 
