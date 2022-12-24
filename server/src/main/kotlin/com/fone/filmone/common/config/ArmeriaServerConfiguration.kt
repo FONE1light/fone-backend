@@ -1,7 +1,6 @@
 package com.fone.filmone.common.config
 
 import com.fone.filmone.GrpcTestService
-import com.fone.filmone.application.auth.AuthService
 import com.linecorp.armeria.common.grpc.GrpcSerializationFormats
 import com.linecorp.armeria.server.docs.DocService
 import com.linecorp.armeria.server.grpc.GrpcService
@@ -18,7 +17,6 @@ import java.nio.charset.StandardCharsets
 @RequiredArgsConstructor
 class ArmeriaServerConfiguration(
     val grpcTestService: GrpcTestService,
-    val authService: AuthService
 ) {
 
     @Bean
@@ -35,7 +33,6 @@ class ArmeriaServerConfiguration(
             serverBuilder.service(
                 GrpcService.builder()
                     .addService(grpcTestService)
-                    .addService(authService)
                     .supportedSerializationFormats(GrpcSerializationFormats.values())
                     .enableUnframedRequests(true)
                     .build()

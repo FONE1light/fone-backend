@@ -11,6 +11,9 @@ CREATE TABLE users
     profile_url   varchar(100),
     phone_number  varchar(50),
     email         varchar(20),
-    provider_type varchar(10),
+    social_login_type varchar(10),
+    agree_to_terms_of_service_terms_of_use tinyint(1),
+    agree_to_personal_information tinyint(1),
+    is_receive_marketing tinyint(1),
     primary key (id)
 );
