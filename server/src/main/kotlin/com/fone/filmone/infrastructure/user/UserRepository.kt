@@ -6,5 +6,5 @@ import org.springframework.data.repository.kotlin.CoroutineCrudRepository
 
 interface UserRepository : CoroutineCrudRepository<User, Long> {
 
-    fun findByEmailAndSocialLoginType(email: String, socialLoginType: SocialLoginType): User?
+    suspend fun findByEmailAndSocialLoginType(email: String, socialLoginType: String): User?
 }

@@ -15,7 +15,7 @@ class RetrieveUserService(
         with(request) {
             val user = userRepository.findByEmailAndSocialLoginType(
                 email,
-                socialLoginType
+                socialLoginType.toString()
             ) ?: throw UserNotFoundException()
 
             return SignInResponse(user, "accessToken")
