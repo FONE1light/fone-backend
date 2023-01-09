@@ -1,4 +1,4 @@
-package msa.order.common.jwt
+package com.fone.filmone.common.jwt
 
 import com.fone.filmone.common.exception.UnauthorizedException
 import org.springframework.context.annotation.Bean

@@ -1,4 +1,4 @@
-package msa.order.common.jwt
+package com.fone.filmone.common.jwt
 
 import org.springframework.http.HttpHeaders
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken

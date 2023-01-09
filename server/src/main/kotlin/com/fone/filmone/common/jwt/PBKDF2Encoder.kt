@@ -1,4 +1,4 @@
-package msa.order.common.jwt
+package com.fone.filmone.common.jwt
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.security.crypto.password.PasswordEncoder

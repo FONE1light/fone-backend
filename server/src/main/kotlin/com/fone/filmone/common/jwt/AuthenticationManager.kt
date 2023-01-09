@@ -1,6 +1,5 @@
-package msa.order.common.jwt
+package com.fone.filmone.common.jwt
 
-import com.fone.filmone.common.jwt.JWTUtils
 import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
