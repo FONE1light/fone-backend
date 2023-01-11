@@ -27,7 +27,7 @@ class AuthenticationManager(
             .switchIfEmpty(Mono.empty())
             .map {
                 val claims = jwtUtils.getAllClaimsFromToken(authToken)
-                val rolesMap = claims.get("role", java.util.List::class.java)
+                val rolesMap = claims.get("roles", java.util.List::class.java)
                 UsernamePasswordAuthenticationToken(
                     email,
                     null,

@@ -26,9 +26,9 @@ class JWTUtils {
         key = Keys.hmacShaKeyFor(secret.toByteArray())
     }
 
-    fun generateUserToken(email: String): Token {
+    fun generateUserToken(email: String, roles: List<Role>): Token {
         val claims: MutableMap<String, Any?> = HashMap()
-        claims["roles"] = mutableListOf(Role.ROLE_USER)
+        claims["roles"] = roles
 
         return doGenerateToken(claims, email)
     }
