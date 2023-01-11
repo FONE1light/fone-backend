@@ -20,12 +20,12 @@ class WebSecurityConfig(
     val securityContextRepository: SecurityContextRepository
 ) {
     @Bean
-    fun securitygWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
+    fun securityWebFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
         return http
             .exceptionHandling()
             .authenticationEntryPoint { swe: ServerWebExchange, _: AuthenticationException? ->
                 Mono.fromRunnable {
-                    throw UnauthorizedException()
+                    throw UnauthorizedException(HttpStatus.UNAUTHORIZED, "유효하지 않은 토큰입니다.")
                 }
             }.accessDeniedHandler { swe: ServerWebExchange, _: AccessDeniedException? ->
                 Mono.fromRunnable { swe.response.statusCode = HttpStatus.FORBIDDEN }
@@ -51,7 +51,8 @@ class WebSecurityConfig(
                 "/user/v1/auth/sign-in",
                 "/user/v1/auth/sign-up",
                 "/user/v1/auth/check-nickname-duplication",
-                "/user/v1/question",).permitAll()
+                "/user/v1/question",
+            ).permitAll()
             .anyExchange().authenticated()
 
             .and()
