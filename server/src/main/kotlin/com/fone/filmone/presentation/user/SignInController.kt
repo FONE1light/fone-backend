@@ -1,9 +1,9 @@
-package com.fone.filmone.presentation.auth
+package com.fone.filmone.presentation.user
 
-import com.fone.filmone.application.auth.SignInFacade
+import com.fone.filmone.application.user.SignInFacade
 import com.fone.filmone.common.response.CommonResponse
-import com.fone.filmone.presentation.auth.SignInDto.SignInRequest
-import com.fone.filmone.presentation.auth.SignInDto.SignInResponse
+import com.fone.filmone.presentation.user.SignInDto.SignInRequest
+import com.fone.filmone.presentation.user.SignInDto.SignInResponse
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
