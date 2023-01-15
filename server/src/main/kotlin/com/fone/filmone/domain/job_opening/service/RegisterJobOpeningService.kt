@@ -20,7 +20,7 @@ class RegisterJobOpeningService(
         val user = userRepository.findByEmail(email) ?: throw NotFoundUserException()
 
         with(request) {
-            val jobOpening = toEntity(user)
+            val jobOpening = toEntity(user.id!!)
 
             jobOpeningRepository.save(jobOpening)
 

@@ -27,7 +27,7 @@ class RegisterJobOpeningDto {
         val domains: List<Domain>,
         val work: Work,
     ) {
-        fun toEntity(user: User): JobOpening {
+        fun toEntity(userId: Long): JobOpening {
 
             return JobOpening(
                 title = title,
@@ -42,7 +42,7 @@ class RegisterJobOpeningDto {
                 type = type,
                 domains = domains.joinToString(","),
                 work = work.toEntity(),
-                user = user,
+                userId = userId,
             )
         }
     }
