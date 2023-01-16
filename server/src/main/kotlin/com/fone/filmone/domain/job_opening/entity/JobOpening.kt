@@ -6,13 +6,12 @@ import com.fone.filmone.domain.job_opening.enum.Type
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
-import javax.persistence.Transient
 
 @Table("job_openings")
 data class JobOpening(
 
     @Id
-    val id: Long? = null,
+    var id: Long? = null,
 
     @Column
     val title: String,
@@ -46,9 +45,6 @@ data class JobOpening(
 
     @Column
     val domains: String,
-
-    @Transient
-    val work: Work,
 
     @Column
     val userId: Long,

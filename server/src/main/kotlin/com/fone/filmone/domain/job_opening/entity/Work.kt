@@ -8,7 +8,7 @@ import org.springframework.data.relational.core.mapping.Table
 data class Work(
 
     @Id
-    val id: Long? = null,
+    var id: Long? = null,
 
     @Column
     val produce: String,
@@ -42,4 +42,7 @@ data class Work(
 
     @Column
     val email: String,
+
+    @Column
+    val jobOpeningId: Long,
 )

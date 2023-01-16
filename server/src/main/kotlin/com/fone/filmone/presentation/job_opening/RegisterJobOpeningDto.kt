@@ -6,7 +6,6 @@ import com.fone.filmone.domain.common.Interest
 import com.fone.filmone.domain.job_opening.entity.JobOpening
 import com.fone.filmone.domain.job_opening.enum.Domain
 import com.fone.filmone.domain.job_opening.enum.Type
-import com.fone.filmone.domain.user.entity.User
 import org.springframework.format.annotation.DateTimeFormat
 import java.sql.Date
 
@@ -41,7 +40,6 @@ class RegisterJobOpeningDto {
                 career = career,
                 type = type,
                 domains = domains.joinToString(","),
-                work = work.toEntity(),
                 userId = userId,
             )
         }
@@ -60,7 +58,7 @@ class RegisterJobOpeningDto {
         val manager: String,
         val email: String,
     ) {
-        fun toEntity(): com.fone.filmone.domain.job_opening.entity.Work {
+        fun toEntity(jobOpeningId: Long): com.fone.filmone.domain.job_opening.entity.Work {
 
             return com.fone.filmone.domain.job_opening.entity.Work(
                 produce = produce,
@@ -74,6 +72,7 @@ class RegisterJobOpeningDto {
                 details = details,
                 manager = manager,
                 email = email,
+                jobOpeningId = jobOpeningId,
             )
         }
     }

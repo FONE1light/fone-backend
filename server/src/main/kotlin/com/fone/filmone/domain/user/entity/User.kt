@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails
 data class User(
 
     @Id
-    val id: Long? = null,
+    var id: Long? = null,
 
     @Column
     var job: Job,
