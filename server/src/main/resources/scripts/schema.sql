@@ -93,7 +93,8 @@ CREATE TABLE profiles
 DROP TABLE IF EXISTS profile_images;
 CREATE TABLE profile_images
 (
-    id         bigint NOT NULL AUTO_INCREMENT,
-    profile_id bigint,
+    id          bigint NOT NULL AUTO_INCREMENT,
+    profile_id  bigint,
+    profile_url varchar(300),
     primary key (id)
 );
