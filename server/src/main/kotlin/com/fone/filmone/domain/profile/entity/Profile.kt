@@ -1,6 +1,7 @@
 package com.fone.filmone.domain.profile.entity
 
 import com.fone.filmone.domain.common.Career
+import com.fone.filmone.domain.common.Gender
 import com.fone.filmone.domain.common.Type
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
@@ -19,7 +20,7 @@ data class Profile (
     val birthday: String,
 
     @Column
-    val gender: String,
+    val gender: Gender,
 
     @Column
     val height: Int,
