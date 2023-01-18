@@ -1,44 +1,49 @@
-package com.fone.filmone.domain.job_opening.entity
+package com.fone.filmone.domain.profile.entity
 
 import com.fone.filmone.domain.common.Career
-import com.fone.filmone.domain.common.Gender
 import com.fone.filmone.domain.common.Type
 import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
 import org.springframework.data.relational.core.mapping.Table
 
-@Table("job_openings")
-data class JobOpening(
+@Table("profiles")
+data class Profile (
 
     @Id
     var id: Long? = null,
 
     @Column
-    val title: String,
+    val hookingComment: String,
 
     @Column
-    val interests: String,
+    val birthday: String,
 
     @Column
-    val deadline: String,
+    val gender: String,
 
     @Column
-    val casting: String,
+    val height: Int,
 
     @Column
-    val numberOfRecruits: Int,
+    val weight: Int,
 
     @Column
-    val gender: Gender,
+    val email: String,
 
     @Column
-    val ageMax: Int,
+    val sns: String,
 
     @Column
-    val ageMin: Int,
+    val specialty: String,
+
+    @Column
+    val details: String,
 
     @Column
     val career: Career,
+
+    @Column
+    val interests: String,
 
     @Column
     val type: Type,

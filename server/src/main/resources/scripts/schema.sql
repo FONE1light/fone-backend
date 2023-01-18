@@ -84,6 +84,7 @@ CREATE TABLE profiles
     details         varchar(500),
     career          varchar(10),
     interests       varchar(50),
+    type            varchar(10),
     domains         varchar(200),
     user_id         bigint,
     primary key (id)
