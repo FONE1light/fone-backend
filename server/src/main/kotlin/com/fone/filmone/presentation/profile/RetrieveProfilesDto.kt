@@ -1,9 +1,5 @@
 package com.fone.filmone.presentation.profile
 
-import com.fone.filmone.domain.common.Career
-import com.fone.filmone.domain.common.Domain
-import com.fone.filmone.domain.common.Gender
-import com.fone.filmone.domain.common.Interest
 import com.fone.filmone.domain.profile.entity.Profile
 import org.springframework.data.domain.PageImpl
 import org.springframework.data.domain.Pageable
@@ -20,6 +16,14 @@ class RetrieveProfilesDto {
                 pageable,
                 profileList.size.toLong()
             )
+        )
+    }
+
+    data class RetrieveProfileResponse(
+        val profile: ProfileDto,
+    ) {
+        constructor(profile: Profile) : this(
+            profile = ProfileDto(profile)
         )
     }
 }

@@ -20,6 +20,7 @@ data class ProfileDto(
     val interests: List<Interest>,
     val domains: List<Domain>,
     val profileImages: List<String>,
+    val viewCount: Long,
 ) {
     constructor(profile: Profile) : this(
         hookingComment = profile.hookingComment,
@@ -35,5 +36,6 @@ data class ProfileDto(
         interests = profile.interests.split(",").map { Interest(it) }.toList(),
         domains = profile.domains.split(",").map { Domain(it) }.toList(),
         profileImages = listOf(),
+        viewCount = profile.viewCount,
     )
 }
